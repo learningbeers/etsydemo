@@ -9,4 +9,8 @@ class Listing < ActiveRecord::Base
    		:path => ":style/:id_:filename"
 
 	end
+
+	validates :name, :description, :price, presence: true
+	validates :price, numericality: { greater_than: 0 }
+
 end
